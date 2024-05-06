@@ -1,0 +1,146 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Arial',sans-serif;
+}
+
+/* 導覽列 */
+nav{
+    background-color: #fff;
+    color: #251E1C;
+    display: flex;
+    justify-content: space-between;
+}
+nav .mainMenu{
+    display: flex;
+    list-style: none;
+}
+nav .mainMenu li a{
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #251E1C;
+    font-size: 1.5em;
+}
+nav .mainMenu li a:hover{
+    background-color: #251E1C;
+    color:#FFF;
+}
+nav .openMenu{
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+nav .mainMenu .closeMenu , .icons i {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}  
+
+.logo{
+    margin: 20px;
+    font-size: 25px;
+    cursor: pointer;
+}
+@media(max-width:768px){
+    nav .mainMenu{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        transition: top 1s ease;
+        display: none;
+
+    }
+nav .mainMenu .closeMenu{
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+nav .openMenu{
+    display: block;
+   
+}
+nav .mainMenu li a:hover{
+    background: none;
+    color:#251E1C;
+    font-size: 1.6rem;
+}
+.icons i{
+    display: inline-block;
+    padding: 12px;
+}
+
+}
+/* banner */
+.banner{
+    display: flex;
+    justify-content: center;
+    max-width: 100%; /* 圖片最大寬度為容器寬度 */
+    height: 63vh;
+}
+/* 產品 */
+.main-product {
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+  }
+  
+  .main-product a {
+    position: relative; /* 设置相对定位 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .main-product img {
+    width: 100%;
+    height: 90vh;
+  }
+  
+  .left::before,
+.middle::before,
+.right::before {
+  content: attr(data-text);
+  position: absolute;
+  color: white; /* 设置文字颜色为白色 */
+  font-size: 36px; /* 设置文字大小 */
+  font-weight: 500;
+  writing-mode: vertical-rl; /* 将文字设置为直式 */
+  letter-spacing: 0.3rem;
+}
+
+.left::before {
+  top:5%; /* 距离顶部 10px */
+  left: 10%; /* 距离左侧 10px */
+}
+
+.middle::before {
+  top: 50%; /* 上下居中 */
+  left: 50%; /* 左右居中 */
+  transform: translate(-50%, -50%); /* 居中 */
+}
+
+.right::before {
+  bottom: 5%; /* 距离底部 10px */
+  right: 10%; /* 距离右侧 10px */
+}
+  
+  
